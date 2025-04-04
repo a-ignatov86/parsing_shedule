@@ -1,7 +1,12 @@
 import telebot
 from telebot import types
+import os
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot("7441834795:AAGUYUoATRFSTpr5VzxY_tvQuSaZSgVSVk4") # Задаем бот
+load_dotenv()
+TOKEN_BOT_RSU = os.getenv('TOKEN_BOT_RSU') 
+
+bot = telebot.TeleBot(TOKEN_BOT_RSU) # Задаем бот
 
 @bot.message_handler(commands=['start'])
 def welcome(message): # Для кнопок внутри меню
